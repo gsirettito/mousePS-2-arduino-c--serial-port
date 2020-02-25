@@ -1,0 +1,36 @@
+﻿<Window x:Class="COMPort.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ComboBox x:Name="Comports" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,25,0,0" Width="80" SelectedIndex="0" DropDownOpened="Comports_DropDownOpened"/>
+        <ToggleButton x:Name="tb" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="6,1" Margin="110 25 0 0" Click="clicked">Start</ToggleButton>
+
+        <Grid Margin="-35,0,15,15">
+            <Viewbox Width="256">
+                <Grid>
+                    <Path Fill="#868491" Data="M256,80H144c-48.523,0-88,39.477-88,88v200c0,79.402,64.602,144,144,144s144-64.598,144-144V168
+			C344,119.477,304.523,80,256,80z"/>
+                    <Path Fill="#B4B6BC" Data="M256,80h-56.219v431.989c0.074,0,0.145,0.011,0.219,0.011c79.398,0,144-64.598,144-144V168
+			C344,119.477,304.523,80,256,80z"/>
+                    <Path x:Name="leftClick" Fill="#5C546A" Data="M304,94.339C290.181,85.303,273.708,80,256,80H144c-17.708,0-34.181,5.303-48,14.339V232
+			c0,30.879,25.125,56,56,56h96c30.875,0,56-25.121,56-56V94.339z"/>
+                    <Path x:Name="rigthClick" Fill="#868491" Data="M199.781,80v208H248c30.875,0,56-25.121,56-56V94.339C290.181,85.303,273.708,80,256,80H199.781z"/>
+                    <Path x:Name="centerClick" Fill="#B4B6BC" Data="M200,224L200,224c-8.837,0-16-7.163-16-16v-48c0-8.837,7.163-16,16-16l0,0c8.837,0,16,7.163,16,16
+			v48C216,216.836,208.837,224,200,224z"/>
+                    <Path Fill="#FFFFFF" Data="M200,144c-0.075,0-0.145,0.021-0.219,0.022v79.956c0.075,0.001,0.144,0.022,0.219,0.022
+			c8.836,0,16-7.164,16-16v-48C216,151.163,208.837,144,200,144z"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+        <Canvas x:Name="mouseArea" Visibility="Collapsed">
+            <Viewbox x:Name="cursor" Height="16" Canvas.Left="0" Canvas.Top="0">
+                <Polygon
+                         Fill="White"
+                         Stroke="Black"
+                         StrokeThickness="3"
+                         Points="0,0 0,105 2,105 25,82 43,116 57,109 42,77 42,75 74,75 74,73 1,0"/>
+            </Viewbox>
+        </Canvas>
+    </Grid>
+</Window>
